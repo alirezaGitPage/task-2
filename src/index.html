@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header class="main-header container block">
+      <h1>لیست تراکنشها</h1>
+      <div class="search hidden">
+        <input class="search__box" type="text" placeholder="جستجو تراکنش..." />
+        <span class="search__icon"
+          ><i class="fa-solid fa-magnifying-glass"></i
+        ></span>
+      </div>
+    </header>
+    <main class="main container block">
+      <div class="action">
+        <button class="show-table btn btn--primary">بار گذاری تراکنش ها</button>
+      </div>
+      <section class="transactions hidden">
+        <!-- <table class="transactions__table">
+          <caption class="caption">
+            لیست تراکنش های شما
+          </caption>
+          <thead>
+            <th>ردیف</th>
+            <th>نوع تراکنش</th>
+            <th class="sort-price chevron">
+              مبلغ
+              <i class="price-chevron fa-solid fa-chevron-down"></i>
+            </th>
+            <th>شماره پیگیری</th>
+            <th class="sort-date chevron">
+              تاریخ تراکنش
+              <i class="date-chevron fa-solid fa-chevron-down"></i>
+            </th>
+          </thead>
+          <tbody class="tbody">
+            <tr>
+              <td>10</td>
+              <td class="deposit">افزایش اعتبار</td>
+              <td>1,000,000</td>
+              <td>123126411</td>
+              <td class="date-time">1399/08/12 ساعت 12:23</td>
+            </tr>
+          </tbody>
+        </table> -->
+      </section>
+    </main>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
