@@ -1,33 +1,40 @@
+// This Class Communicate with DataBase and do 3 tasks: getDate, sortData and SearchData
+
+// axios config
+const transactionAPI = axios.create({
+    baseURL: "http://localhost:3000",
+});
+
 export default class TransactionRepository{
     static async getAllData(){
-        const {data} = await axios.get("http://localhost:3000/transactions");
+        const {data} = await transactionAPI.get("/transactions");
         return data;
     }
 
     static async sortOnPrice(order){
         if(order === "asc"){
-            const {data} = await axios.get("http://localhost:3000/transactions?_sort=price");
+            const {data} = await transactionAPI.get("/transactions?_sort=price&_order=asc");
             return data;
         }
         if(order === "desc"){
-            const {data} = await axios.get("http://localhost:3000/transactions?_sort=-price");
+            const {data} = await transactionAPI.get("/transactions?_sort=price&_order=desc");
             return data;
         }
     }
 
     static async sortOnDate(order){
         if(order === "asc"){
-            const {data} = await axios.get("http://localhost:3000/transactions?_sort=date");
+            const {data} = await transactionAPI.get("/transactions?_sort=date&_order=asc");
             return data;
         }
         if(order === "desc"){
-            const {data} = await axios.get("http://localhost:3000/transactions?_sort=-date");
+            const {data} = await transactionAPI.get("/transactions?_sort=date&_order=desc");
             return data;
         }
     }
 
     static async searchTable(query){
-        const {data} = await axios.get(`http://localhost:3000/transactions?refId_like=${query}`);
+        const {data} = await transactionAPI.get(`/transactions?refId_like=${query}`);
         return data;
     }
 }
