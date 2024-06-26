@@ -5,6 +5,7 @@ const transactionAPI = axios.create({
     baseURL: "http://localhost:3000",
 });
 
+// This Static Class Service the User three task which was explained above...
 export default class TransactionRepository{
     static async getAllData(){
         const {data} = await transactionAPI.get("/transactions");

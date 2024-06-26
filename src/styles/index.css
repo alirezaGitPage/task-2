@@ -188,10 +188,8 @@ td.withdrawl{
 td.date-time{
   text-align: justify;
 }
-th.chevron{
+.chevron{
   cursor: pointer;
-}
-th.chevron > i{
   margin-right: 0.2rem;
 }
 .rotate{

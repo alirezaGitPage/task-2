@@ -1,3 +1,4 @@
+// This class is like an Interface, by using methods in services class and run them on View class, make the page dynamic
 import ViewUnit from "./view.js";
 import TransactionRepository from "./services.js";
 

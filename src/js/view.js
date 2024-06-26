@@ -1,3 +1,4 @@
+// This class work with UI and Create the table and its UI
 export default class ViewUnit{
     constructor(root,inputField,handlers){
         this.root = root;
@@ -14,14 +15,14 @@ export default class ViewUnit{
                 <thead>
                 <th>ردیف</th>
                 <th>نوع تراکنش</th>
-                <th class="sort-price chevron">
+                <th class="sort-price">
                     مبلغ
-                    <i class="price-chevron fa-solid fa-chevron-down"></i>
+                    <i class="chevron price-chevron fa-solid fa-chevron-down"></i>
                 </th>
                 <th>شماره پیگیری</th>
-                <th class="sort-date chevron">
+                <th class="sort-date">
                     تاریخ تراکنش
-                    <i class="date-chevron fa-solid fa-chevron-down"></i>
+                    <i class="chevron date-chevron fa-solid fa-chevron-down"></i>
                 </th>
                 </thead>
                 <tbody class="tbody"></tbody>
