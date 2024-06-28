@@ -16,14 +16,21 @@ export default class TransactionRepository{
         }
     }
 
-    static async sortOnPrice(order){
+    static async sortOnPrice(order,query){
         try {
+            let result;
+            if(query==""){
+                result = "/transactions?";
+            }
+            else{
+                result = `/transactions?refId_like=${query}&`
+            }
             if(order === "asc"){
-                const {data} = await transactionAPI.get("/transactions?_sort=price&_order=asc");
+                const {data} = await transactionAPI.get(`${result}_sort=price&_order=asc`);
                 return data;
             }
             if(order === "desc"){
-                const {data} = await transactionAPI.get("/transactions?_sort=price&_order=desc");
+                const {data} = await transactionAPI.get(`${result}_sort=price&_order=desc`);
                 return data;
             }
         } catch (error) {
@@ -31,14 +38,21 @@ export default class TransactionRepository{
         }
     }
 
-    static async sortOnDate(order){
+    static async sortOnDate(order,query){
         try {
+            let result;
+            if(query==""){
+                result = "/transactions?";
+            }
+            else{
+                result = `/transactions?refId_like=${query}&`
+            }
             if(order === "asc"){
-                const {data} = await transactionAPI.get("/transactions?_sort=date&_order=asc");
+                const {data} = await transactionAPI.get(`${result}_sort=date&_order=asc`);
                 return data;
             }
             if(order === "desc"){
-                const {data} = await transactionAPI.get("/transactions?_sort=date&_order=desc");
+                const {data} = await transactionAPI.get(`${result}_sort=date&_order=desc`);
                 return data;
             }
         } catch (error) {

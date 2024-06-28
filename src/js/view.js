@@ -43,7 +43,8 @@ export default class ViewUnit{
             else{
                 order = "desc";
             }
-            this.sortTableOnPrice(order);
+            let query = this.inputField.value;
+            this.sortTableOnPrice(order,query);
         });
         sortOnDate.addEventListener("click",() => {
             dateChevron.classList.toggle("rotate");
@@ -53,7 +54,8 @@ export default class ViewUnit{
             else{
                 order = "desc";
             }
-            this.sortTableOnDate(order);
+            let query = this.inputField.value;
+            this.sortTableOnDate(order,query);
         })
         this.inputField.addEventListener("input" , (e) => {
             let query = e.target.value;
@@ -83,6 +85,9 @@ export default class ViewUnit{
             const html = this.#createTableData(id, type, price, refId, date);
             dataList += html;
         });
+        if(dataList == ""){
+            dataList = `<tr><td colspan="5" class="not-found">اطلاعاتی جهت نمایش وجود ندارد.</td></tr>`;
+        }
         tbody.innerHTML = dataList;
     }
 }
